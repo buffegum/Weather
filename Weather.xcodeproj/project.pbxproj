@@ -26,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		551F86162816C04A00B6701C /* .gitignore.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = .gitignore.md; sourceTree = "<group>"; };
 		553206FD28098E6800C9E2A9 /* addNewCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNewCity.swift; sourceTree = "<group>"; };
 		553207012809C31900C9E2A9 /* WeakWeatherTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakWeatherTableCell.swift; sourceTree = "<group>"; };
 		55D08D0427FEE1700055A615 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +61,7 @@
 		55D08CFB27FEE1700055A615 = {
 			isa = PBXGroup;
 			children = (
+				551F86162816C04A00B6701C /* .gitignore.md */,
 				55D08D0627FEE1700055A615 /* Weather */,
 				55D08D0527FEE1700055A615 /* Products */,
 			);
