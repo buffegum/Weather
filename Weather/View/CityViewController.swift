@@ -68,6 +68,7 @@ class CityViewController: UIViewController {
     @IBAction func dismiss(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
         print("Hello")
+        print("x2")
     }
     
     
