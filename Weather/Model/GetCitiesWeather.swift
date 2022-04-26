@@ -10,13 +10,22 @@ import CoreLocation
 
 let network = NetworkWeatherManager()
 
-func getCityWeather (citiesArray: [String], competionHendler: @escaping (Int, Weather) -> () ){
-    for (index,item) in citiesArray.enumerated() {
-        getCoordinateFrom(city: item) { coordinates, error in
+//func getCityWeather (citiesArray: [String], competionHendler: @escaping (Int, Weather) -> () ){
+//    for (index,item) in citiesArray.enumerated() {
+//        getCoordinateFrom(city: item) { coordinates, error in
+//            guard let coordinates = coordinates, error == nil else {return}
+//            network.makeRequest(latitude: coordinates.latitude, longitude: coordinates.longitude) { weather in
+//                competionHendler(index,weather)
+//            }
+//        }
+//    }
+//}
+
+func getCityWeather (city: String, competionHendler: @escaping (Weather) -> () ){
+        getCoordinateFrom(city: city) { coordinates, error in
             guard let coordinates = coordinates, error == nil else {return}
             network.makeRequest(latitude: coordinates.latitude, longitude: coordinates.longitude) { weather in
-                competionHendler(index,weather)
-            }
+                competionHendler(weather)
         }
     }
 }

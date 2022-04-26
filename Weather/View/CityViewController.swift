@@ -67,10 +67,6 @@ class CityViewController: UIViewController {
     
     @IBAction func dismiss(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
-        print("Hello")
-        print("x2")
-        print("one more")
-        print("asdasd")
     }
     
     
@@ -80,21 +76,21 @@ class CityViewController: UIViewController {
 
 extension CityViewController: UIWebViewDelegate, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let weather = weatherModel?.temp else{return 0}
+        guard let weather = weatherModel?.weekly else{return 0}
                 return weather.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let weather = weatherModel?.temp[indexPath.row],
+        guard let weather = weatherModel?.weekly[indexPath.row],
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeakWeatherTableCell", for: indexPath) as? WeakWeatherTableCell
         else {return UITableViewCell()}
         
-        let date = weather.0
+        let date = weather.date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         if let newdate = dateFormatter.date(from: date) {
         let weekday = Calendar.current.component(.weekday, from: newdate)
-            cell.configure(first: getWeekDay(number: weekday) , second: weather.1, third: weather.2)
+            cell.configure(first: getWeekDay(number: weekday) , second: weather.minTemp, third: weather.maxTem)
 
         }
         
